@@ -40,7 +40,6 @@ public class Loader
 				}
 				{
 					s.processed = true;
-					Thread.Sleep(25);
 				}
 			}
 		} while (true);
