@@ -12,30 +12,30 @@ public class Loader
 		int ind = 1;
 		do
 		{
-			BioImage.Scripting.State s = BioImage.Scripting.GetState();
+			Bio.Scripting.State s = Bio.Scripting.GetState();
 			if (s != null)
 			{
 				if (!s.processed)
 				{
-					if (s.type == BioImage.Scripting.Event.Up && s.buts == MouseButtons.Left)
+					if (s.type == Bio.Scripting.Event.Up && s.buts == MouseButtons.Left)
 					{
 						ZCT cord = ImageView.viewer.GetCoordinate();
 						Annotation an = Annotation.CreatePoint(cord, s.p.X, s.p.Y);
 						ImageView.viewer.image.Annotations.Add(an);
 						an.Text = "Point" + ind;
 						ind++;
-						BioImage.Scripting.LogLine(s.ToString());
+						Bio.Scripting.LogLine(s.ToString());
 						ImageView.viewer.UpdateOverlay();
 					}
 					else
-					if (s.type == BioImage.Scripting.Event.Down)
+					if (s.type == Bio.Scripting.Event.Down)
 					{
-						BioImage.Scripting.LogLine(s.ToString());
+						Bio.Scripting.LogLine(s.ToString());
 					}
 					else
-					if (s.type == BioImage.Scripting.Event.Move)
+					if (s.type == Bio.Scripting.Event.Move)
 					{
-						BioImage.Scripting.LogLine(s.ToString());
+						Bio.Scripting.LogLine(s.ToString());
 					}
 				}
 				{
